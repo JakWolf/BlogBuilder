@@ -133,7 +133,7 @@ main :: () {
         generate_html(content, file_name_out);
     }
     
-    array_add(*html_var_list, .{"%%BLOG_POSTS_ALL", builder_to_string(*all_blogs_builder)});
+    array_add(*html_var_list, .{"%%BLOG_POST_ALL", builder_to_string(*all_blogs_builder)});
     
     // Generate blog list.
     blog_list: String_Builder;

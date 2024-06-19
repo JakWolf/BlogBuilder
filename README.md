@@ -1,39 +1,37 @@
 # Overview
-When generating the blog page, all files get read from the `in` folder and all generated files get copied to the `out` folder. 
+When generating the blog, all files get read from the `in` folder and all generated files get written to the `out` folder. 
 
 There are 3 folder inside the `in` folder you have to know about: `blog_posts`, `templates`, `root`, `resources`.
 
-Every file in the `root` and `blog_posts` folder gets read and rendred out with 
-the head, header and footer applied. Those template files get read from the template directory. 
+Every file in the `root` and `blog_posts` folder gets read and rendered out with 
+the head, header and footer applied. Those template files get read from the `template` folder. 
 In addition you can wrap blog posts with something like a div in
 in `blog_start.html` and `blog_end.html`.
 
 The `resources` folder and the `style.css` just get copied in the root of the `out` folder.
 
 # Vars
-You can define variables in the var.txt file.
-The file gets parsed line by line. When using a variable in any file in the `root` `blog_posts` or `template` folder
-the variable gets replaced with the string on the right side of the `=`.
+You can define variables in the var.txt file where they get parsed line by line. 
+You can use variables in any file in the `root` `blog_posts` or `template` folder.
 
-In the blog posts files, on top of every file, you have to write a comment with two variables:
+# Blog posts
+In the blog posts files (insied the `blog_posts` folder), on top of every file, you have to write a comment with two variables:
 ```
 <!--
 %%BLOG_POST_NAME=My blog title
 %%BLOG_POST_DATE=11/06/2024
 -->
 ```
-The format for the date is DD/MM/YYYY. You can use them inside
-the `blog_posts` file and also inside the `blog_star.html` and `blog_end.html` template files.
-They also get used for generating links in the blog post list.
+You can use them inside the `blog_posts` file and also inside the `blog_star.html` and `blog_end.html` template files.
+They also get used for generating links in the blog post list. The format for the date is DD/MM/YYYY.
 
-Two variables get created automatically: `%%BLOG_POST_LIST` and `%%BLOG_POSTS_ALL`.
+Two variables get created automatically: `%%BLOG_POST_LIST` and `%%BLOG_POST_ALL`.
 
-`%%BLOG_LIST` is a html list with all blog post links. They get listed in the order of the date with the
-newest on top.
-`%%ALL_BLOGS_POSTS` is a string with all blog posts concatenate if you just wan't to list them on one page.
+`BLOG_POSTS_LIST` is a html list with all blog post links. They are ordered by date with the newest on top.
 
-Template structure: 
+`%%BLOG_POSTS_ALL` is a string with all blog posts concatenate if you just want to have them listed on one page.
 
+# Template structure: 
 
 <!DOCTYPE html>
 <html>
