@@ -1,1 +1,4 @@
 .build/
+*.pdb
+*.rdbg
+.DS_Store
