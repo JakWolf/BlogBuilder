@@ -11,11 +11,9 @@ in `blog_start.html` and `blog_end.html`.
 The `resources` folder and the `style.css` just get copied in the root of the `out` folder.
 
 # Vars
-You can define variables in the var.txt folder.
-The file gets parsed line by line. When using a war in any file in the `root` `blog_posts` or `template` folder 
-the string on the left site of `=` gets replaced with the string on 
-the right side.
-You can use variables everywhere, also in template files.
+You can define variables in the var.txt file.
+The file gets parsed line by line. When using a variable in any file in the `root` `blog_posts` or `template` folder
+the variable gets replaced with the string on the right side of the `=`.
 
 In the blog posts files, on top of every file, you have to write a comment with two variables:
 ```
@@ -24,8 +22,9 @@ In the blog posts files, on top of every file, you have to write a comment with 
 %%BLOG_POST_DATE=11/06/2024
 -->
 ```
-The format for the date is DD/MM/YYYY. These variables get used for genrating links. You can use them inside
+The format for the date is DD/MM/YYYY. You can use them inside
 the `blog_posts` file and also inside the `blog_star.html` and `blog_end.html` template files.
+They also get used for generating links in the blog post list.
 
 Two variables get created automatically: `%%BLOG_POST_LIST` and `%%BLOG_POSTS_ALL`.
 
@@ -51,7 +50,7 @@ Template structure:
 </head>
 ```
 
-<body>
+`<body>`
 
 *HEADER <- header.html*
 ```
@@ -64,9 +63,9 @@ Template structure:
 
 <hr>
 ```
-<main>
+`<main>`
 
-*INPUT_FILE*
+*INPUT_FILE* <- files from the `root` `blog_posts` folder.
 ```
 <div>
     <h1>This is my blog.</h1>
@@ -77,7 +76,8 @@ Template structure:
 
 </div>
 ```
-</main>
+
+`</main>`
 
 *FOOTER <- footer.html*
 ```
@@ -87,5 +87,5 @@ Template structure:
 </footer>
 ```
 
-</body>
-</htlml>
+`</body>`
+`</htlml>`
