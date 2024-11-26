@@ -1,3 +1,8 @@
+:root {
+	--text_color: black;
+	--highlight_color: #90e082;
+}
+
 img {
 	width: 50%;
 }
@@ -58,8 +63,15 @@ footer {
 
 a {
 	text-decoration: none;
+	color: var(--text_color);
+	visited: var(--text_color);
+	text-decoration: underline;
 }
 
 a:hover {
-	text-decoration: underline;
+ 	background-color: var(--highlight_color);
+}
+
+.a_header {
+	font-size: 24pt;
 }

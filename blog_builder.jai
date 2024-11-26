@@ -44,7 +44,7 @@ main :: () {
         array_add(user_data, copy_string(info.short_name));
     }
     
-    visit_files("in/blog_posts", false, *file_names , visitor, follow_symlinks=false);
+    visit_files("in/blog_posts", false, *file_names , visitor, follow_directory_symlinks=false);
     
     blog_post_file_content: [..] string;
     blog_post_file_name:    [..] string;
@@ -149,11 +149,9 @@ main :: () {
     
     array_add(*html_var_list, .{"%%BLOG_POST_LIST",  builder_to_string(*blog_list)});
 
-
-
     // Copy and generate files in root.    
     array_reset(*file_names);
-    visit_files("in/root", false, *file_names , visitor, follow_symlinks=false);
+    visit_files("in/root", false, *file_names , visitor, follow_directory_symlinks=false);
     
     root_file_content: [..] string;
     root_file_name:    [..] string;
@@ -201,7 +199,6 @@ generate_html :: (content: string, file_name: string) {
     mod_content := replace_vars(content);
     append(*html_builder, mod_content);
     append(*html_builder, "\n</main>\n\n");
-    
     
     footer = replace_vars(footer);
     append(*html_builder, footer);

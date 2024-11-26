@@ -1,2 +1,2 @@
-%%EMAIL=someguy@gmail.com
-%%NAME=Some Guy
+%%EMAIL=jakob.wolf@mailbox.org
+%%NAME=Jakob Wolf
